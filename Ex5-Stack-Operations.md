@@ -1,78 +1,42 @@
-# Ex4 Evaluation of prefix expression
-## DATE:24-02-25
+# Ex5 Stack Operations
+## DATE:27-02-25
 ## AIM:
-To write a C function to evaluate the given prefix expression using stack and print the output of the given prefix expression from the stack inside the function . 
+To write a C function to perform push and pop operation of the stack in the infix to postfix conversion.
 
 ## Algorithm
-1. Start 
-2. Initialize an empty stack s with a variable top for tracking the stack index. 
-3. Define a push() function to add an element to the stack. 
-4. Define a pop() function to remove and return the top element from the stack. 
-5. In evalprefix(), loop through the given prefix expression from right to left. 
-6. For each character, if it’s an operator (+, *), pop two operands from the stack, perform the 
-   operation, and push the result. 
-7. If it's a digit, convert it to an integer and push it onto the stack; finally, print the result after 
-   the loop ends. 
-8. End   
+1. Initialize top as -1 and declare stack as a character array. 
+2. To push, increment top and assign the character to stack[top]. 
+3. To pop, check if top is -1 and return -1 if true. 
+4. If not, return stack[top] and decrement top.   
 
 ## Program:
 ```
 /*
-Program to evaluate the given prefix expression
-Developed by:YENUGANTI PRATHYUSHA
-RegisterNumber: 212223240187
+Program to find and display the priority of the operator in the given Postfix expression
+Developed by: k.pujitha
+RegisterNumber: 212223240074
 */
 ```
 ```
-#include<stdio.h> 
-#include<string.h> 
-#include<ctype.h> 
-int s[50]; 
-int top=0; 
-void push(int ch) 
+char stack[100]; 
+int top = -1; 
+void push(char x) 
 { 
-top++; 
-s[top]=ch; 
+    stack[++top] = x; 
 } 
  
-int pop() 
+char pop() 
 { 
-int ch; 
-ch=s[top]; 
-top=top-1; 
-return(ch); 
-} 
-  
-  
-void evalprefix(char p[50]) 
-{ 
-int a,b,c,i; 
-for(i=strlen(p)-1;i>=0;i--) 
-{ 
-if(p[i]=='+') 
-{ 
-a=pop(); 
-b=pop(); 
-c=a+b; 
-push(c); 
-} 
-else if(p[i]=='*') 
-{ 
-a=pop(); 
-b=pop(); 
-c=a*b; 
-push(c); 
-} 
-else 
-{ 
-push(p[i]-48); 
-} 
-} 
-printf("%d",pop()); 
-} 
+    if(top == -1) 
+        return -1; 
+    else 
+        return stack[top--]; 
+}
 ```
+
 ## Output:
-![image](https://github.com/user-attachments/assets/06dc0669-54c2-40d8-bb44-4886fe033702)
+
+![image](https://github.com/user-attachments/assets/801d72e3-603e-4f57-be36-c0829b77fbb3)
 
 ## Result:
-Thus, the C program to evaluate the prefix expression using stack and print the output of the given prefix expression from the stack inside the function is implemented successfully.
+Thus the C program to perform push and pop operation of the stack in the infix to postfix conversion is implemented successfully.
