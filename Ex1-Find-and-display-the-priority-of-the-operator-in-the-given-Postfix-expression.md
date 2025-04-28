@@ -10,7 +10,7 @@ To write a C program to find and display the priority of the operator in the giv
 4. Loop through each character in the string. 
 5. For each operator, call the priority() function to determine its priority. 
 6. Print the operator and its corresponding priority level. 
-7. End.    
+7. End.   
 ## Program:
 ```
 /*
