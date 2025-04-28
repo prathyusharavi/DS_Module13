@@ -1,25 +1,25 @@
-# EX 1(a) Display operator precedence in the infix expression.
-## DATE:
+# EX 1 Display operator precedence in the infix expression.
+## DATE:20-02-25
 ## AIM:
 To write a C program to find and display the priority of the operator in the given Postfix expression
 
-## Algorithm:
-
+## Algorithm
 1. Start the program. 
 2. Define the priority() function to return the priority of operators. 
 3. Initialize the string containing operators and operands. 
 4. Loop through each character in the string. 
 5. For each operator, call the priority() function to determine its priority. 
 6. Print the operator and its corresponding priority level. 
-7. End the program. 
-
+7. End.    
 ## Program:
 ```
 /*
 Program to find and display the priority of the operator in the given Postfix expression
-Developed by: YENUGANTI PRATHYUSHA
-RegisterNumber:  212223240187
+Developed by: k.pujitha
+RegisterNumber: 212223240074
 */
+```
+```
 #include <stdio.h> 
 #include<string.h> 
 int priority(char x) 
@@ -38,7 +38,7 @@ return 0;
  
 int main() 
 { 
-int i,j; 
+int i,j;  
 char ch[100]="(A*B)^C+(D%H)/F&G"; 
 for(i=0;i<strlen(ch);i++) 
 { 
@@ -75,12 +75,11 @@ break;
 } 
  
 return 0; 
-}
+} 
 ```
-
 ## Output:
 
-![image](https://github.com/user-attachments/assets/5aff7510-6a9e-4072-b672-0e627452e275)
+![image](https://github.com/user-attachments/assets/8c6dd3f6-e852-42bd-84cc-1720a0365645)
 
 
 ## Result:
